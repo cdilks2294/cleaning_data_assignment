@@ -48,5 +48,5 @@ mean_sdact <- mean_sdfull %>%
 summarized_data <- mean_sdact %>%
   dplyr::group_by(Labels,subjects)%>%
   dplyr::summarize_all(list(mean))
-write_tsv(summarized_data, path="summarized_data.tsv")
+write.table(summarized_data, path="summarized_data.tsv",row.names = FALSE)
 
